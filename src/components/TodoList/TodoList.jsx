@@ -4,14 +4,22 @@ import React, { Component } from 'react';
 
 import TodoListItem from 'components/TodoListItem';
 
-const TodoList = () => {
+const TodoList = ( { todos } ) => {
 
-    const items = ['Drink Coffee', 'Build Awesome App'];
+    const elements = todos.map((item) => {
+        
+        const { id, ...itemProps } = item;
+
+        return (
+            <li key={id} className="list-group-item">
+                <TodoListItem { ...itemProps } />
+            </li>
+        )
+    });
+
     return (
-        <ul>
-            <li>Create new React App</li>
-            <li>Todo something</li>
-            <li><TodoListItem /></li>
+        <ul className="list-group todo-list justify-content-between">
+            { elements }
         </ul>
     );
 };

@@ -3,9 +3,12 @@ import './AppHeader.css';
 
 import React, { Component } from 'react';
 
-const AppHeader = () => {
+const AppHeader = ( {toDo, done} ) => {
     return (
-        <h1>My Todo list</h1>
+        <div className="app-header d-flex">
+            <h1>Todo list</h1>
+            <h2>{ toDo } more to do, { done } done</h2>
+        </div>
     );
 };
 

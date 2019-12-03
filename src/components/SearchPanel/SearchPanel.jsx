@@ -9,7 +9,7 @@ const SearchPanel = () => {
         fontSize: '20px'
     };
     return (
-        <input style={ searchStyle } placeholder={searchTetx} />
+        <input style={ searchStyle } placeholder={searchTetx} className="search-input form-control" />
     );
 };
 
